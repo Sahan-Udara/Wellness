@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .login-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+  
+  .appointment-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hero-images {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .doctor-img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .footer {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-info {
+    flex: 1;
+  }
+  
+  .social-icons i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #000;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .footer-links h4 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-links a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  

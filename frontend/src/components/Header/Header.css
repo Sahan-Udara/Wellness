@@ -1,0 +1,41 @@
+/* Header.css */
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333; /* Background color of the navbar */
+}
+
+.nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #555; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
+.navbar-nav h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 20px; /* Adjust font size for headings */
+}
+
+.nav-item + .nav-item {
+    border-left: 1px solid #444; /* Border between nav items */
+}
+
+.nav-item:last-child {
+    border-right: 1px solid #444; /* Border on the right of the last nav item */
+}
