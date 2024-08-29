@@ -39,28 +39,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-// // Update a specific treatment in the database
-// router.put("/update/:id", async (req, res) => {
-//     const userId = req.params.id;
-//     const { name, description, benefit, duration } = req.body; // Note the change from 'benefits' to 'benefit'
-
-//     const updateTreatment = {
-//         name,
-//         description,
-//         benefit,
-//         duration
-//     };
-
-//     try {
-//         await Treatment.findByIdAndUpdate(userId, updateTreatment, { new: true });
-//         res.status(200).json({ status: "Treatment Updated" });
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ status: "Error updating treatment", error: err.message });
-//     }
-// });
-
-
 // Update a specific treatment in the database
 router.put("/update/:id", async (req, res) => {
     const userId = req.params.id;
