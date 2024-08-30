@@ -1,41 +1,54 @@
-/* Header.css */
-
+/* Navbar container */
 .navbar-nav {
     display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: #333; /* Background color of the navbar */
+    background: linear-gradient(45deg, #333, #555); /* Gradient background */
+    border-radius: 10px; /* Rounded corners for the navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
 }
 
+/* Nav items styling */
 .nav-item {
     margin: 0;
     padding: 0;
 }
 
+/* Nav links styling */
 .nav-link {
     display: block;
-    padding: 15px 20px;
-    color: #fff; /* Text color */
+    padding: 15px 25px;
     text-decoration: none; /* Remove underline from links */
     font-size: 18px; /* Font size */
-    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500; /* Slightly bolder text */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
+    border-radius: 5px; /* Rounded corners for the links */
 }
 
+/* Nav link hover effect */
 .nav-link:hover {
-    background-color: #555; /* Background color on hover */
-    color: #fff; /* Text color on hover */
+    background-color: #007bff; /* Blue color on hover */
+    color: #fff; /* Keep font color white on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-.navbar-nav h1 {
+/* Adjust heading inside nav link */
+.nav-link h1 {
     margin: 0; /* Remove default margin */
-    font-size: 20px; /* Adjust font size for headings */
+    font-size: 16px; /* Adjust font size for headings */
+    font-weight: 500; /* Match font weight with nav links */
+    color: #fff; /* White font color */
 }
 
+/* Separator between nav items */
 .nav-item + .nav-item {
     border-left: 1px solid #444; /* Border between nav items */
 }
 
+/* Border for the right of the last nav item */
 .nav-item:last-child {
     border-right: 1px solid #444; /* Border on the right of the last nav item */
 }

@@ -1,0 +1,57 @@
+/* Container to center the search bar and button */
+.search-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px; /* Space below the search bar */
+}
+
+/* Styling for the search bar with a unique ID */
+#search-bar {
+    width: 300px; /* Adjusted width for a smaller search bar */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 10px; /* Space between search bar and button */
+    margin-top: 20px;
+}
+
+/* Styling for the search button with a unique ID */
+#search-button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the search button with unique ID */
+#search-button:hover {
+    background-color: #0056b3; /* Darker blue color */
+}
+
+/* Styling for the download report button with a unique ID */
+#download-report {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fa7000; /* Green color */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Space above the button */
+    margin-bottom: 20px;
+    margin-left: 1000px;
+    
+}
+
+/* Hover effect for the download report button with unique ID */
+#download-report:hover {
+    background-color: #db6403; /* Darker green color */
+}

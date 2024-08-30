@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import './AddTreatment.css';
 
 function AddTreatment(){
     const history = useNavigate();
-    const [inputs,setInputs]=useState({
-        name:"",
-        description:"",
-        benefit:"",
-        duration:"",
+    const [inputs, setInputs] = useState({
+        name: "",
+        description: "",
+        benefit: "",
+        duration: "",
     });
  
-    const handleChange =(e)=>{
-        setInputs ((prevState)=>({
+    const handleChange = (e) => {
+        setInputs((prevState) => ({
             ...prevState,
-            [e.target.name]:e.target.value,
+            [e.target.name]: e.target.value,
         }));
     };
 
-    const handleSubmit =(e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log(inputs);
-        sendRequest().then(()=>history('/viewtreatment'))
-    }
+        sendRequest().then(() => history('/viewtreatment'));
+    };
 
     const sendRequest = async () => {
         try {
@@ -39,51 +40,50 @@ function AddTreatment(){
         }
     };
     
-    return(
+    return (
         <div>
             <h1>Update Treatment</h1>
             <form onSubmit={handleSubmit}>
-                    <label >Treatment Name</label><br/>
-                    <input
-                        type="text"
-                        name="name"
-                        value={inputs.name}
-                        onChange={handleChange}
-                        required
-                    />
-                        <br/><br/>
-                    <label>Description</label><br/>
-                    <input
-                        type="text"
-                        name="description"
-                        value={inputs.description}
-                        onChange={handleChange}
-                        required
-                    />
-                        <br/><br/>
-                    <label>Benefit</label><br/>
-                    <input
-                        type="text"
-                        name="benefit"
-                        value={inputs.benefit}
-                        onChange={handleChange}
-                        required
-                    />
-                        <br/><br/>
-                    <label >Duration</label><br/>
-                    <input
-                        type="text"
-                        name="duration"
-                        value={inputs.duration}
-                        onChange={handleChange}
-                        required
-                    />
-                        <br/><br/>
-                <button>Submit</button>
+                <label>Treatment Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    value={inputs.name}
+                    onChange={handleChange}
+                    required
+                />
+                
+                <label>Description</label>
+                <input
+                    type="text"
+                    name="description"
+                    value={inputs.description}
+                    onChange={handleChange}
+                    required
+                />
+                
+                <label>Benefit</label>
+                <input
+                    type="text"
+                    name="benefit"
+                    value={inputs.benefit}
+                    onChange={handleChange}
+                    required
+                />
+                
+                <label>Duration</label>
+                <input
+                    type="text"
+                    name="duration"
+                    value={inputs.duration}
+                    onChange={handleChange}
+                    required
+                />
+                
+                <button id="submit-button">Submit</button>
             </form>
-     </div>
-
+        </div>
     );
 }
 
-export default AddTreatment
+export default AddTreatment;

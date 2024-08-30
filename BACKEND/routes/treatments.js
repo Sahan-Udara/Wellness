@@ -10,7 +10,7 @@ treatment.use(cors());
 
 // Add data to the database
 router.post("/add", async (req, res) => {
-    const { name, description, benefit, duration } = req.body; // Note the change from 'benefits' to 'benefit'
+    const { name, description, benefit, duration } = req.body; 
 
     const newTreatment = new Treatment({
         name,
