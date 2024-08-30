@@ -6,15 +6,21 @@ body {
 }
 
 .home-container {
-  background-image: linear-gradient(to bottom right, cyan, white);
+  background-image: url('../Assets/MHome.png'); /* Set background image */
+  background-size: cover; /* Make sure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 100vh; /* Adjust the height as needed */
+  width: 100%;
 }
+
 
 /* Header Styles */
 .header {
   display: flex;
   justify-content: center; /* Center the content */
   align-items: center;
-  padding: 20px;
+
   background-color: transparent; /* Transparent to show the gradient */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #d1d1d1; /* Gray line between header and navigation */
@@ -25,6 +31,13 @@ body {
   text-align: center;
   flex: 1; /* Allow the logo to take up available space */
   color: #000000; /* Black color for the logo text */
+}
+
+.logo-nav {
+  background-size: cover; /* Make sure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 70px; /* Adjust the height as needed */
 }
 
 .login-btn {
@@ -44,11 +57,13 @@ body {
   justify-content: center; /* Center the navigation links */
   align-items: center;
   padding: 10px 20px;
-  background-color: #ffebf2; /* Light pink background */
+  background-color: #ffffff; /* Light pink background */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px; /* Rounded corners for a softer look */
-  margin: 10px; /* Add some margin around the nav for spacing */
+  margin: 5px auto; /* Center the navigation box horizontally */
   border-bottom: 1px solid #d1d1d1; /* Gray line between navigation and home section */
+  width: 80%; /* Customize the width */
+  max-width: 1200px; /* Set a max width for larger screens */
 }
 
 .navigation ul {
@@ -108,6 +123,7 @@ body {
 .home-content h1 {
   font-size: 36px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .home-content p {
@@ -130,9 +146,17 @@ body {
 }
 
 .doctor-images img {
-  width: 150px;
+  width: 250px;
   height: auto;
   border-radius: 8px;
+}
+
+.Doc-1 {
+  margin-bottom: 50px;
+}
+
+.Doc-2 {
+  margin-top: 50px;
 }
 
 /* Footer Styles */
@@ -152,9 +176,16 @@ body {
   margin-bottom: 20px;
 }
 
-.logo-footer {
+.logo-footer-Text {
   font-size: 24px;
   color: #000000; /* Black color for the footer logo text */
+}
+
+.logo-footer {
+  background-size: cover; /* Make sure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 100px; /* Adjust the height as needed */
 }
 
 .footer-content h4 {
@@ -177,7 +208,16 @@ body {
   gap: 10px;
 }
 
-.social-media a img {
-  width: 24px;
-  height: 24px;
+.social-media a {
+  color: #000; /* Adjust the color as needed */
+}
+
+.social-media a:hover {
+  color: #0073e6; /* Adjust the hover color as needed */
+}
+
+.copy-right {
+  text-align: center;
+  margin: 10px;
+  font-size: 15px;
 }

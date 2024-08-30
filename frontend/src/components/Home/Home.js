@@ -1,5 +1,11 @@
 import React from 'react';
 import './Home.css';
+import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa';
+
+
+import IMG1 from "../Assets/Doctor 1.png"
+import IMG2 from "../Assets/Doctor 2.png"
+import Logo from "../Assets/HeroLogo.png"
 
 
 const Home = () => {
@@ -7,6 +13,7 @@ const Home = () => {
     <div className="home-container">
       {/* Header Section */}
       <header className="header">
+      <img alt="" className="logo-nav" src={Logo} /> 
         <div className="logo">W E L L N E S S 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             A Y R V E D A
@@ -43,15 +50,16 @@ const Home = () => {
           <button className="appointment-btn">Request an Appointment</button>
         </div>
         <div className="doctor-images">
-          <img src="/image.jpg" alt="Doctor 1" />
-          <img src="/assets/Doctor 2.jpg" alt="Doctor 2" />
+        <img className='Doc-1' src={IMG1} /> 
+        <img className='Doc-2' src={IMG2} /> 
           </div>
       </section>
 
       {/* Footer Section */}
       <footer className="footer">
         <div className="footer-content">
-          <div className="logo-footer">WELLNESS</div>
+        <img alt="" className="logo-footer" src={Logo} /> 
+          <div className="logo-footer-Text">WELLNESS</div>
           <div className="quick-links">
             <h4>Quick Links</h4>
             <ul>
@@ -79,12 +87,16 @@ const Home = () => {
           </div>
         </div>
         <div className="social-media">
-          <a href="#"><img src="instagram.png" alt="Instagram" /></a>
-          <a href="#"><img src="linkedin.png" alt="LinkedIn" /></a>
-          <a href="#"><img src="youtube.png" alt="YouTube" /></a>
-          <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+          <a href="#"><FaInstagram size={24} /></a>
+          <a href="#"><FaLinkedin size={24} /></a>
+          <a href="#"><FaYoutube size={24} /></a>
+          <a href="#"><FaFacebook size={24} /></a>
         </div>
       </footer>
+
+      <div className='copy-right'>
+      <p>© 2024. Designed by Sahan. All right reserved.</p>
+      </div>
     </div>
   );
 };

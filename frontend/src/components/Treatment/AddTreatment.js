@@ -41,8 +41,8 @@ function AddTreatment(){
     };
     
     return (
-        <div>
-            <h1>Update Treatment</h1>
+        <div className="">
+            <h1>Add Treatment</h1>
             <form onSubmit={handleSubmit}>
                 <label>Treatment Name</label>
                 <input
