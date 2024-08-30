@@ -11,7 +11,7 @@ import UpdateTreatment from "./components/UpdateTreatment/UpdateTreatment";
 function App() {
     return (
         <Router>
-            <Header />
+            {/* <Header /> */}
             
             <Routes>
                 <Route path="/addtreatment" element={<AddTreatment />} />

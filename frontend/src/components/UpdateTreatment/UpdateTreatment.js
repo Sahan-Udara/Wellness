@@ -120,7 +120,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import './UpdateTreatment.css'; // Import the CSS file
+// import './UpdateTreatment.css'; // Import the CSS file
 
 function UpdateTreatment() {
     const [inputs, setInputs] = useState({

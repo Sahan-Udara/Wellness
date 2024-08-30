@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import Treatment from './Treatment';
 import { useReactToPrint } from "react-to-print";
+import { useNavigate } from 'react-router-dom';
 import './ViewTreatment.css'; // Import the CSS file
 
 const URL = "http://localhost:8070/treatments";
@@ -17,6 +17,7 @@ const fetchHandler = async () => {
 };
 
 function ViewTreatment() {
+    const navigate = useNavigate();
     const [treatments, setTreatments] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [noResults, setNoResults] = useState(false);
@@ -27,20 +28,19 @@ function ViewTreatment() {
             setTreatments(data || []);
         });
     }, []);
-    
+
     // Download function
     const ComponentsRef = useRef();
     const handlePrint = useReactToPrint({
         content: () => ComponentsRef.current,
-        documentTitle: "Users Report",
-        onAfterPrint: () => alert("Users Report Successfully Downloaded!"),
+        documentTitle: "Treatments Report",
+        onAfterPrint: () => alert("Treatments Report Successfully Downloaded!"),
     });
     // End Download function
 
     // Search function
     const handleSearch = () => {
         fetchHandler().then((data) => {
-            // Adjusted to filter directly on the treatments array
             const filteredTreatments = data.filter((treatment) =>
                 Object.values(treatment).some((field) =>
                     field.toString().toLowerCase().includes(searchQuery.toLowerCase())
@@ -50,11 +50,26 @@ function ViewTreatment() {
             setNoResults(filteredTreatments.length === 0);
         });
     };
-    // End Search function
+
+    // Handle update and delete
+    const handleUpdate = (id) => {
+        navigate(`/viewtreatment/${id}`);
+    };
+
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete(`${URL}/delete/${id}`);
+            setTreatments(treatments.filter(treatment => treatment._id !== id));
+            alert('Treatment Deleted');
+        } catch (err) {
+            console.error("Error deleting treatment:", err);
+            alert('Error deleting treatment');
+        }
+    };
 
     return (
-        <div>
-            <h1>Display View Treatments Page</h1>
+        <div className='home-back'>
+            <h1>View Treatments</h1>
 
             {/* Search container */}
             <div className="search-container">
@@ -67,7 +82,7 @@ function ViewTreatment() {
                 />
                 <button id="search-button" onClick={handleSearch}>Search</button>
             </div>
-            
+
             {noResults ? (
                 <div>
                     <p>No Treatments Found</p>
@@ -75,17 +90,51 @@ function ViewTreatment() {
             ) : (
                 <div ref={ComponentsRef}>
                     {treatments.length > 0 ? (
-                        treatments.map((treatment, i) => (
-                            <div key={i}>
-                                <Treatment treatment={treatment} />
-                            </div>
-                        ))
+                        <table className="treatments-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Benefit</th>
+                                    <th>Duration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {treatments.map((treatment) => (
+                                    <tr key={treatment._id}>
+                                        <td>{treatment._id}</td>
+                                        <td>{treatment.name}</td>
+                                        <td>{treatment.description}</td>
+                                        <td>{treatment.benefit}</td>
+                                        <td>{treatment.duration}</td>
+                                        <td className="actions-cell">
+                                            <button
+                                                className="update-button"
+                                                onClick={() => handleUpdate(treatment._id)}
+                                            >
+                                                Update
+                                            </button>
+                                            <button
+                                                id="delete-button"
+                                                className="delete-button"
+                                                onClick={() => handleDelete(treatment._id)}
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     ) : (
                         <p>No treatments found</p>
                     )}
                 </div>
             )}
             <button id="download-report" onClick={handlePrint}>Download Report</button>
+            <button onClick={() => navigate('/addtreatment')}>Add Treatment</button>
         </div>
     );
 }
