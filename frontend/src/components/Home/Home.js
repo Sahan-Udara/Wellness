@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa';
-
+import Chatbox from '../Chatbox/Chatbox';
 
 import IMG1 from "../Assets/Doctor 1.png"
 import IMG2 from "../Assets/Doctor 2.png"
@@ -97,7 +97,11 @@ const Home = () => {
       <div className='copy-right'>
       <p>© 2024. Designed by Sahan. All right reserved.</p>
       </div>
+      <Chatbox />
     </div>
+
+
+
   );
 };
 
