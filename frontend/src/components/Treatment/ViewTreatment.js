@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useReactToPrint } from "react-to-print";
 import { useNavigate } from 'react-router-dom';
 import './ViewTreatment.css'; // Import the CSS file
+import Logo from "../Assets/HeroLogo.png";
+import PieChart from '../Charts/PieChart'; // Import the PieChart component
 
 const URL = "http://localhost:8070/treatments";
 
@@ -36,6 +38,7 @@ function ViewTreatment() {
         documentTitle: "Treatments Report",
         onAfterPrint: () => alert("Treatments Report Successfully Downloaded!"),
     });
+
     // End Download function
 
     // Search function
@@ -69,6 +72,18 @@ function ViewTreatment() {
 
     return (
         <div className='home-back'>
+            {/* Home Header */}
+            <header className="header">
+                <img alt="" className="logo-nav" src={Logo} /> 
+                <div className="logo">W E L L N E S S 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                A Y R V E D A
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                H O S P I T A L</div>
+                <button className="login-btn">Login</button>
+            </header>
+       {/* Home Header End */}
+
             <h1>View Treatments</h1>
 
             {/* Search container */}
@@ -90,44 +105,48 @@ function ViewTreatment() {
             ) : (
                 <div ref={ComponentsRef}>
                     {treatments.length > 0 ? (
-                        <table className="treatments-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Benefit</th>
-                                    <th>Duration</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {treatments.map((treatment) => (
-                                    <tr key={treatment._id}>
-                                        <td>{treatment._id}</td>
-                                        <td>{treatment.name}</td>
-                                        <td>{treatment.description}</td>
-                                        <td>{treatment.benefit}</td>
-                                        <td>{treatment.duration}</td>
-                                        <td className="actions-cell">
-                                            <button
-                                                className="update-button"
-                                                onClick={() => handleUpdate(treatment._id)}
-                                            >
-                                                Update
-                                            </button>
-                                            <button
-                                                id="delete-button"
-                                                className="delete-button"
-                                                onClick={() => handleDelete(treatment._id)}
-                                            >
-                                                Delete
-                                            </button>
-                                        </td>
+                        <>
+                            <table className="treatments-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Benefit</th>
+                                        <th>Duration</th>
+                                        <th>Actions</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {treatments.map((treatment) => (
+                                        <tr key={treatment._id}>
+                                            <td>{treatment._id}</td>
+                                            <td>{treatment.name}</td>
+                                            <td>{treatment.description}</td>
+                                            <td>{treatment.benefit}</td>
+                                            <td>{treatment.duration}</td>
+                                            <td className="actions-cell">
+                                                <button
+                                                    className="update-button"
+                                                    onClick={() => handleUpdate(treatment._id)}
+                                                >
+                                                    Update
+                                                </button>
+                                                <button
+                                                    id="delete-button"
+                                                    className="delete-button"
+                                                    onClick={() => handleDelete(treatment._id)}
+                                                >
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            {/* Pie Chart */}
+                            <PieChart treatments={treatments} />
+                        </>
                     ) : (
                         <p>No treatments found</p>
                     )}

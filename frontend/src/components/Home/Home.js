@@ -59,14 +59,14 @@ const Home = () => {
       <footer className="footer">
         <div className="footer-content">
         <img alt="" className="logo-footer" src={Logo} /> 
-          <div className="logo-footer-Text">WELLNESS</div>
+        {/* <div className="logo-footer-Text">WELLNESS</div> */}
           <div className="quick-links">
             <h4>Quick Links</h4>
             <ul>
               <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="#">Treatments</a></li>
+              <li><a href="#">Foods</a></li>
+              <li><a href="#">Pharmacy</a></li>
             </ul>
           </div>
           <div className="about">
@@ -86,6 +86,7 @@ const Home = () => {
             </ul>
           </div>
         </div>
+        <div className="logo-footer-Text">WELLNESS</div>
         <div className="social-media">
           <a href="#"><FaInstagram size={24} /></a>
           <a href="#"><FaLinkedin size={24} /></a>

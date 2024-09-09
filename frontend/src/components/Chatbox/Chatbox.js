@@ -29,7 +29,7 @@ const Chatbox = () => {
 
     // Convert the question to lowercase for case-insensitive comparison
     const lowerCaseQuestion = question.toLowerCase();
-//
+
     // Check for specific questions and provide corresponding answers
     if (lowerCaseQuestion.includes('hi') || lowerCaseQuestion.includes('hey') || lowerCaseQuestion.includes('hello')) {
         replyText = 'Hello! How can I help you?';
