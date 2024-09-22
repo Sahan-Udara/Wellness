@@ -109,7 +109,7 @@ function ViewTreatment() {
                             <table className="treatments-table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        {/* <th>ID</th> */}
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Benefit</th>
@@ -120,7 +120,7 @@ function ViewTreatment() {
                                 <tbody>
                                     {treatments.map((treatment) => (
                                         <tr key={treatment._id}>
-                                            <td>{treatment._id}</td>
+                                            {/* <td>{treatment._id}</td> */}
                                             <td>{treatment.name}</td>
                                             <td>{treatment.description}</td>
                                             <td>{treatment.benefit}</td>

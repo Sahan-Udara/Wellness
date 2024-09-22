@@ -1,37 +1,3 @@
-// import React from 'react';
-// import { Pie } from 'react-chartjs-2';
-// import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from 'chart.js';
-// import './PieChart.css'; // Import the CSS file
-
-// // Register required components
-// ChartJS.register(Title, Tooltip, Legend, ArcElement);
-
-// const PieChart = ({ treatments }) => {
-//     // Prepare data for the pie chart
-//     const data = {
-//         labels: treatments.map(treatment => treatment.name),
-//         datasets: [
-//             {
-//                 data: treatments.map(treatment => treatment.duration),
-//                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//                 borderColor: 'rgba(75, 192, 192, 1)',
-//                 borderWidth: 1,
-//             },
-//         ],
-//     };
-
-//     return (
-//         <div className="pie-chart-container"> {/* Add the class name here */}
-//             <h2>Duration Distribution</h2>
-//             <div className="chart"> {/* Ensure this container fits the chart */}
-//                 <Pie data={data} />
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default PieChart;
-
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from 'chart.js';

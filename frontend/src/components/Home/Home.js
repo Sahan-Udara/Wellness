@@ -1,33 +1,33 @@
 import React from 'react';
-import './Home.css';
+import { Link } from 'react-router-dom'; // Import Link for client-side routing
+import './Home.css'; // Ensure you have the correct CSS file
 import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa';
 import Chatbox from '../Chatbox/Chatbox';
 
-import IMG1 from "../Assets/Doctor 1.png"
-import IMG2 from "../Assets/Doctor 2.png"
-import Logo from "../Assets/HeroLogo.png"
-
+import IMG1 from "../Assets/Doctor 1.png";
+import IMG2 from "../Assets/Doctor 2.png";
+import Logo from "../Assets/HeroLogo.png";
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-container1">
+    
       {/* Header Section */}
       <header className="header">
-      <img alt="" className="logo-nav" src={Logo} /> 
-        <div className="logo">W E L L N E S S 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            A Y R V E D A
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            H O S P I T A L</div>
-            <button className="login-btn">Login</button>
-
+        <img alt="Logo" className="logo-nav" src={Logo} />
+        <div className="logo">
+          W E L L N E S S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          A Y U R V E D A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          H O S P I T A L
+          <button className="login-btn1">Login</button>
+        </div>
       </header>
 
       {/* Navigation Section */}
       <nav className="navigation">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Treatments</a></li>
+        <li><Link to="/Home">Home</Link></li>
+        <li><Link to="/treatmentpage">Treatments</Link></li>
           <li><a href="#">Foods</a></li>
           <li><a href="#">Find a Doctor</a></li>
           <li><a href="#">Pharmacy</a></li>
@@ -40,31 +40,30 @@ const Home = () => {
         <div className="home-content">
           <h1>We empower patients to achieve optimal health and well-being.</h1>
           <p>
-          At Wellness Ayurveda Hospital, we invite you to explore the transformative 
-          power of Ayurveda. With roots in centuries-old traditions, Ayurveda provides 
-          a holistic approach to healing that balances the mind, body, and spirit. 
-          Embrace a path of self-discovery and rejuvenation through our comprehensive
-           treatments and personalized care. Join us on a journey towards lasting 
-           wellness and harmony.
+            At Wellness Ayurveda Hospital, we invite you to explore the transformative 
+            power of Ayurveda. With roots in centuries-old traditions, Ayurveda provides 
+            a holistic approach to healing that balances the mind, body, and spirit. 
+            Embrace a path of self-discovery and rejuvenation through our comprehensive
+            treatments and personalized care. Join us on a journey towards lasting 
+            wellness and harmony.
           </p>
           <button className="appointment-btn">Request an Appointment</button>
         </div>
         <div className="doctor-images">
-        <img className='Doc-1' src={IMG1} /> 
-        <img className='Doc-2' src={IMG2} /> 
-          </div>
+          <img className='Doc-1' src={IMG1} alt="Doctor 1" />
+          <img className='Doc-2' src={IMG2} alt="Doctor 2" />
+        </div>
       </section>
 
       {/* Footer Section */}
       <footer className="footer">
         <div className="footer-content">
-        <img alt="" className="logo-footer" src={Logo} /> 
-        {/* <div className="logo-footer-Text">WELLNESS</div> */}
+          <img alt="Logo" className="logo-footer" src={Logo} />
           <div className="quick-links">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Treatments</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/treatmentpage">Treatments</Link></li>
               <li><a href="#">Foods</a></li>
               <li><a href="#">Pharmacy</a></li>
             </ul>
@@ -96,13 +95,11 @@ const Home = () => {
       </footer>
 
       <div className='copy-right'>
-      <p>© 2024. Designed by Sahan. All right reserved.</p>
+        <p>© 2024. Designed by Sahan. All right reserved.</p>
       </div>
       <Chatbox />
     </div>
-
-
-
+  
   );
 };
 

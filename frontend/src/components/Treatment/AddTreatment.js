@@ -93,7 +93,7 @@ function AddTreatment() {
 
     return (
         
-        <div className="home-back">
+        <div className="home-back" id="Tratment">
             {/* Home Header */}
             <header className="header">
                 <img alt="" className="logo-nav" src={Logo} /> 
@@ -102,7 +102,7 @@ function AddTreatment() {
                 A Y R V E D A
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 H O S P I T A L</div>
-                <button className="login-btn">Login</button>
+                <button className="login-btnAd">Login</button>
 
             </header>
        {/* Home Header End */}

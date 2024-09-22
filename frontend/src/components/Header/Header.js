@@ -9,7 +9,7 @@ function Header(){
 
       <div>
       <ul className="navbar-nav">
-          <li className="nav-item">
+          {/* <li className="nav-item">
               <Link to="/addtreatment" className="nav-link">
                   <h1>Add Treatment</h1>
               </Link>
@@ -18,7 +18,20 @@ function Header(){
               <Link to="/viewtreatment" className="nav-link">
                   <h1>View Treatment</h1>
               </Link>
+          </li> */}
+
+          <li className="nav-item">
+              <Link to="/AdminHome" className="nav-link">
+                  <h1>Admin Dashboard</h1>
+              </Link>
           </li>
+
+          <li className="nav-item">
+              <Link to="/Home" className="nav-link">
+                  <h1>Visit to Wellness</h1>
+              </Link>
+          </li>
+
       </ul>
   </div>
 
