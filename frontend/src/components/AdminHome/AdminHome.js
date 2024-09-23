@@ -18,8 +18,8 @@ const AdminHome = () => {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           H O S P I T A L
         </div>
-        {/* <button className="login-btnAd">Login</button> */}
-      </header>
+        <button className="login-btnAd" onClick={() => navigate('/Header')}>Log Out</button>
+        </header>
       
       <h1 className="admin-title">Admin Dashboard</h1>
       <div className="admin-center1">

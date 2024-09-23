@@ -7,10 +7,11 @@ import LiverDisordersImage from "../../components/Assets/LiverDisorders.jpg";
 import NeurologicalDisordersImage from "../../components/Assets/NeurologicalDisorders.jpg";
 import DermatologicalImage from "../../components/Assets/Dermatological.jpg";
 import NirogaImage from "../../components/Assets/Niroga.jpg";
-
 import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa';
 import Chatbox from '../Chatbox/Chatbox';
 import './TreatmentPage.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const treatments = [
   {
@@ -66,6 +67,8 @@ const treatments = [
 ];
 
 const TreatmentPage = () => {
+  const navigate = useNavigate();
+
   return (
     
     <div className="homeTr-container">
@@ -77,8 +80,8 @@ const TreatmentPage = () => {
           A Y U R V E D A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           H O S P I T A L
         </div>
-        <button className="login-btn1">Login</button>
-      </header>
+        <button className="login-btnAd" onClick={() => navigate('/Header')}>Log Out</button>
+        </header>
 
       {/* Navigation Section */}
       <nav className="navigation">

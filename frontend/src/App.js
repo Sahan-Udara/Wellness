@@ -12,13 +12,16 @@ import TreatmentLogin from "./components/TreatmentLogin/TreatmentLogin";
 
 
 
+
 function App() {
     return (
         <Router>
-            <Header />
+           
            
             <Routes>
-            <Route path="/addtreatment" element={<AddTreatment />} />
+            <Route path="/" element={<Header />} />
+
+                <Route path="/addtreatment" element={<AddTreatment />} />
                 <Route path="/viewtreatment" element={<ViewTreatment />} />
                 <Route path="/AdminHome" element={<AdminHome />} />
                 <Route path="/viewtreatment/:_id" element={<UpdateTreatment />} />
@@ -26,8 +29,8 @@ function App() {
                 <Route path="/TreatmentLogin" element={<TreatmentLogin />} /> {/* Route to TreatmentLogin */}
                 <Route path="/home" element={<Home />} />
                 <Route path="/home" element={<Home />} />
+                <Route path="/Header" element={<Header/>} />
 
-                
                 </Routes>
         </Router>
     );

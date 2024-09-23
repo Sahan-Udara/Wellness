@@ -102,7 +102,8 @@ function AddTreatment() {
                 A Y R V E D A
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 H O S P I T A L</div>
-                <button className="login-btnAd">Login</button>
+                {/* <button className="login-btnAd">Log Out</button> */}
+                <button className="login-btnAd" onClick={() => navigate('/Header')}>Log Out</button>
 
             </header>
        {/* Home Header End */}

@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom'; // Import Link for client-side routing
 import './Home.css'; // Ensure you have the correct CSS file
 import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa';
 import Chatbox from '../Chatbox/Chatbox';
+import { useNavigate } from 'react-router-dom';
+
 
 import IMG1 from "../Assets/Doctor 1.png";
 import IMG2 from "../Assets/Doctor 2.png";
 import Logo from "../Assets/HeroLogo.png";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container1">
     
@@ -19,8 +23,8 @@ const Home = () => {
           W E L L N E S S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           A Y U R V E D A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           H O S P I T A L
-          <button className="login-btn1">Login</button>
-        </div>
+          <button className="login-btnAd" onClick={() => navigate('/Header')}>Log Out</button>
+          </div>
       </header>
 
       {/* Navigation Section */}
